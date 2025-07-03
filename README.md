@@ -1,1 +1,0 @@
-# Snippets_generator_extension

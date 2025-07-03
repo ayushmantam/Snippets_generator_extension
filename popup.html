@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AI Summary</title>
+    <title>Codeforces Snippet Generator</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -9,18 +9,15 @@
         min-height: 300px;
         padding: 15px;
       }
-
       h2 {
         color: #333;
         margin-bottom: 15px;
       }
-
       .options {
         display: flex;
         gap: 10px;
         margin-bottom: 15px;
       }
-
       button {
         padding: 8px 15px;
         background-color: #4285f4;
@@ -30,26 +27,21 @@
         cursor: pointer;
         font-weight: bold;
       }
-
       button:hover {
         background-color: #3367d6;
       }
-
       #copy-btn {
         background-color: #34a853;
       }
-
       #copy-btn:hover {
         background-color: #2e8b57;
       }
-
-      #summary-type {
+      #language-type {
         padding: 8px;
         border-radius: 4px;
         border: 1px solid #ddd;
       }
-
-      #result {
+      #snippet-result {
         margin-top: 15px;
         padding: 15px;
         border: 1px solid #ddd;
@@ -60,22 +52,12 @@
         white-space: pre-wrap;
         line-height: 1.5;
       }
-
-      #result ul {
-        padding-left: 20px;
-      }
-
-      #result li {
-        margin-bottom: 10px;
-      }
-
       .loading {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 150px;
       }
-
       .loader {
         border: 4px solid #f3f3f3;
         border-top: 4px solid #3498db;
@@ -84,36 +66,26 @@
         height: 30px;
         animation: spin 1s linear infinite;
       }
-
       @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
     </style>
   </head>
   <body>
-    <h2>AI Summary</h2>
-
+    <h2>Codeforces Snippet Generator</h2>
     <div class="options">
-      <select id="summary-type">
-        <option value="brief">Brief Summary</option>
-        <option value="detailed">Detailed Summary</option>
-        <option value="bullets">Bullet Points</option>
-        <option value="snippet">Snippet</option>
+      <select id="language-type">
+        <option value="cpp">C++</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
       </select>
-      <button id="summarize">Summarize This Page</button>
-      <button id="copy-btn">Copy Summary</button>
+      <button id="generate-snippet">Generate Snippet</button>
+      <button id="copy-btn">Copy Snippet</button>
     </div>
-
-    <div id="result">
-      Select a summary type and click 'Summarize This Page' to generate a
-      summary.
+    <div id="snippet-result">
+      Select a language and click 'Generate Snippet' to generate code snippet.
     </div>
-
     <script src="config.js"></script>
     <script src="popup.js"></script>
   </body>
