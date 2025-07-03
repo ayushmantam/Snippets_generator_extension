@@ -1,19 +1,19 @@
 
-# Codeforces Snippet Generator Extension 🚀
+# Codeforces/Codechef Snippet Generator Extension 🚀
 
-This Chrome Extension allows you to generate **code snippets** in C++, Python, and Java from Codeforces problem pages using **Gemini AI**.
+This Chrome Extension allows you to generate **code snippets** in C++, Python, and Java from Codeforces/Codechef problem pages using **Gemini AI**.
 
 ---
 
 ## 🔧 Features
 
-- 🔍 Automatically extracts the problem text from the Codeforces page.
+- 🔍 Automatically extracts the problem text from the Codeforces/Codechef page.
 - 🧠 Uses Gemini API to generate:
   - ✅ C++ Snippets
   - ✅ Python Snippets
   - ✅ Java Snippets
 - 📋 One-click **copy to clipboard** button.
-- 🌐 Works on any Codeforces problem page.
+- 🌐 Works on any Codeforces/Codechef problem page.
 
 ---
 
