@@ -1,3 +1,16 @@
+function sanitizeCode(raw) {
+  // Remove markdown code fences and optional language tag
+  const cleaned = raw
+    .replace(/```[a-zA-Z]*/g, "")  // remove ```cpp or similar
+    .replace(/```/g, "")           // remove any remaining ```
+    .trim();
+
+  // Escape HTML special characters
+  return cleaned
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
 
 document.getElementById("generate-snippet").addEventListener("click", async () => {
   const resultDiv = document.getElementById("snippet-result");
@@ -19,7 +32,9 @@ document.getElementById("generate-snippet").addEventListener("click", async () =
 
         try {
           const snippet = await getGeminiSnippet(res.text, lang, result.geminiApiKey);
-          resultDiv.innerHTML = `<pre><code>${snippet}</code></pre>`;
+          const sanitized = sanitizeCode(snippet);
+          resultDiv.innerHTML = `<pre><code>${sanitized}</code></pre>`;
+
         } catch (error) {
           resultDiv.innerText = `Error: ${error.message || "Failed to generate snippet."}`;
         }
